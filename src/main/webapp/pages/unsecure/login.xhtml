@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+  <ui:composition template="/pages/template/unsecure/commonLayout.xhtml">
+ 
+    		<ui:define name="content">
+        <h:form  id="loginFormId" prependId="false" >
+          <p:messages id="messages" showDetail="true" autoUpdate="true" />
+					
+        <h:panelGrid columns="2" cellpadding="5">
+              
+                        <h:outputLabel id="outTxtUserNameId" value="Username: " name="outTxtUserNameNm"></h:outputLabel>
+                        <p:inputText id="userName" required="true" value="#{loginMgmtBean.userName}" requiredMessage="Please enter username"></p:inputText>
+                      
+                  
+                        <h:outputLabel id="outTxtPasswordId" value="Password: " name="outTxtPasswordNm"></h:outputLabel>
+                        <p:password id="password"  required="true" value="#{loginMgmtBean.password}" requiredMessage="Please enter password" ></p:password>
+              
+                 <f:facet name="footer">
+                    <p:commandButton id="btnLoginId" value="Sign In" action="#{loginMgmtBean.login}" styleClass="loginPanelBtn"></p:commandButton>
+                     <p:commandButton id="btnSignId" value="Sign Up" action="#{loginMgmtBean.signUp}" styleClass="loginPanelBtn" immediate="true" ></p:commandButton>
+   
+              </f:facet>
+              </h:panelGrid>
+                  </h:form>
+   </ui:define>
+   </ui:composition>
+  
+</h:body>
+</html>
